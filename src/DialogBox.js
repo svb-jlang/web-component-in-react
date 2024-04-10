@@ -16,6 +16,7 @@ class DialogBox extends HTMLElement {
   }
 
   render() {
+    const title = this.getAttribute("title") || "Default Text";
     const text = this.getAttribute("text") || "Default Text";
     const variant = this.getAttribute("variant") || "default";
     let style;
@@ -24,6 +25,7 @@ class DialogBox extends HTMLElement {
         style = `<style>
           div {
             display: flex;
+          flex-direction: column;
             width: 333px;
             padding: var(--space-3x, 12px);
             align-items: flex-start;
@@ -43,7 +45,21 @@ class DialogBox extends HTMLElement {
             font-weight: 400;
             line-height: 20px; /* 142.857% */
           }
-          div::before {
+          strong {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            margin-left: 28px;
+          }
+          strong::before {
+            margin-right: 8px;
             display: inline-block;
             content: "";
             width: 20px;
@@ -56,6 +72,7 @@ class DialogBox extends HTMLElement {
         style = `<style>
           div {
             display: flex;
+          flex-direction: column;
             width: 333px;
             padding: var(--space-3x, 12px);
             align-items: flex-start;
@@ -75,7 +92,21 @@ class DialogBox extends HTMLElement {
             font-weight: 400;
             line-height: 20px; /* 142.857% */
           }
-          div::before {
+          strong {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            margin-left: 28px;
+          }
+          strong::before {
+            margin-right: 8px;
             display: inline-block;
             content: "";
             width: 20px;
@@ -88,6 +119,7 @@ class DialogBox extends HTMLElement {
         style = `<style>
           div {
             display: flex;
+          flex-direction: column;
             width: 333px;
             padding: var(--space-3x, 12px);
             align-items: flex-start;
@@ -107,7 +139,21 @@ class DialogBox extends HTMLElement {
             font-weight: 400;
             line-height: 20px; /* 142.857% */
           }
-          div::before {
+          strong {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            margin-left: 28px;
+          }
+          strong::before {
+            margin-right: 8px;
             display: inline-block;
             content: "";
             width: 20px;
@@ -120,6 +166,7 @@ class DialogBox extends HTMLElement {
         style = `<style>
           div {
             display: flex;
+          flex-direction: column;
             width: 333px;
             padding: var(--space-3x, 12px);
             align-items: flex-start;
@@ -139,7 +186,21 @@ class DialogBox extends HTMLElement {
             font-weight: 400;
             line-height: 20px; /* 142.857% */
           }
-          div::before {
+          strong {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            margin-left: 28px;
+          }
+          strong::before {
+            margin-right: 8px;
             display: inline-block;
             content: "";
             width: 20px;
@@ -152,6 +213,7 @@ class DialogBox extends HTMLElement {
         style = `<style>
           div {
             display: flex;
+          flex-direction: column;
             width: 333px;
             padding: var(--space-3x, 12px);
             align-items: flex-start;
@@ -171,7 +233,21 @@ class DialogBox extends HTMLElement {
             font-weight: 400;
             line-height: 20px; /* 142.857% */
           }
-          div::before {
+          strong {
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+          }
+          p {
+            margin: 0;
+            margin-left: 28px;
+          }
+          strong::before {
+            margin-right: 8px;
             display: inline-block;
             content: "";
             width: 20px;
@@ -181,7 +257,7 @@ class DialogBox extends HTMLElement {
         </style>`;
     }
 
-    this.shadowRoot.innerHTML = `${style}<div>${text}</div>`;
+    this.shadowRoot.innerHTML = `${style}<div><strong>${title}</strong><p>${text}</p></div>`;
   }
 }
 

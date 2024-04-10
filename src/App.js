@@ -11,6 +11,7 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+  const [title, setTitle] = useState("Title from React!");
   const [text, setText] = useState("Hello from React!");
   const [variant, setVariant] = useState("default");
   const myElementRef = useRef(null);
@@ -18,13 +19,21 @@ const App = () => {
   useEffect(() => {
     const element = myElementRef.current;
     if (element) {
+      element.setAttribute("title", title);
       element.setAttribute("text", text);
       element.setAttribute("variant", variant);
     }
-  }, [text, variant]);
+  }, [title, text, variant]);
   return (
     <AppContainer>
       <header className="App-header">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter title here"
+          style={{ marginBottom: "1em" }}
+        />
         <input
           type="text"
           value={text}
