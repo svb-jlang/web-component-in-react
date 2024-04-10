@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import "./DialogBox";
 
-function App() {
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em;
+`;
+
+const App = () => {
+  const [text, setText] = useState("Hello from React!");
+  const [variant, setVariant] = useState("default");
+  const myElementRef = useRef(null);
+
+  useEffect(() => {
+    const element = myElementRef.current;
+    if (element) {
+      element.setAttribute("text", text);
+      element.setAttribute("variant", variant);
+    }
+  }, [text, variant]);
   return (
-    <div className="App">
+    <AppContainer>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text here"
+          style={{ marginBottom: "1em" }}
+        />
+        <select value={variant} onChange={(e) => setVariant(e.target.value)}>
+          <option value="default">Info (Default)</option>
+          <option value="info-on-dark">Info On Dark</option>
+          <option value="success">Success</option>
+          <option value="warning">Warning</option>
+          <option value="error">Error</option>
+        </select>
+        <dialog-box ref={myElementRef}></dialog-box>
       </header>
-    </div>
+    </AppContainer>
   );
-}
+};
 
 export default App;
