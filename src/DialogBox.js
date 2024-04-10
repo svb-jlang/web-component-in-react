@@ -6,6 +6,7 @@ class DialogBox extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.maxTitleLength = 45;
     this.render();
   }
 
@@ -16,9 +17,13 @@ class DialogBox extends HTMLElement {
   }
 
   render() {
-    const title = this.getAttribute("title") || "Default Text";
+    let title = this.getAttribute("title") || "Default Text";
     const text = this.getAttribute("text") || "Default Text";
     const variant = this.getAttribute("variant") || "default";
+
+    if (title.length > this.maxTitleLength) {
+      title = title.substring(0, this.maxTitleLength) + "...";
+    }
     let style;
     switch (variant) {
       case "info-on-dark":
@@ -46,6 +51,7 @@ class DialogBox extends HTMLElement {
             line-height: 20px; /* 142.857% */
           }
           strong {
+            text-overflow: ellipsis;
             display: flex;
             align-items: center;
             font-family: Roboto;
@@ -93,6 +99,7 @@ class DialogBox extends HTMLElement {
             line-height: 20px; /* 142.857% */
           }
           strong {
+            text-overflow: ellipsis;
             display: flex;
             align-items: center;
             font-family: Roboto;
@@ -140,6 +147,7 @@ class DialogBox extends HTMLElement {
             line-height: 20px; /* 142.857% */
           }
           strong {
+            text-overflow: ellipsis;
             display: flex;
             align-items: center;
             font-family: Roboto;
@@ -187,6 +195,7 @@ class DialogBox extends HTMLElement {
             line-height: 20px; /* 142.857% */
           }
           strong {
+            text-overflow: ellipsis;
             display: flex;
             align-items: center;
             font-family: Roboto;
@@ -234,6 +243,7 @@ class DialogBox extends HTMLElement {
             line-height: 20px; /* 142.857% */
           }
           strong {
+            text-overflow: ellipsis;
             display: flex;
             align-items: center;
             font-family: Roboto;
