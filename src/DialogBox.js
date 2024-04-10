@@ -1,6 +1,6 @@
 class DialogBox extends HTMLElement {
   static get observedAttributes() {
-    return ["text", "variant"];
+    return ["title", "text", "variant"];
   }
 
   constructor() {
