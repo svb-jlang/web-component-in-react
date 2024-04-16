@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# DialogBox Web Component in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This repository contains a React application that integrates a custom web component called `DialogBox`. This component is designed to be flexible and customizable, offering features such as dynamic text content, multiple styling variants, SVG integration via a `::before` pseudo-element, and automatic text truncation to ensure consistent UI presentation.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dynamic Text Content:** Allows dynamic updates to the text displayed in the component through React state management.
+- **Multiple Styling Variants:** Supports various styles through the `variant` attribute, including `default`, `primary`, and `secondary`.
+- **SVG Decoration:** Utilizes an SVG icon using a `::before` pseudo-element for enhanced visual appeal.
+- **Text Truncation:** Implements text truncation to a specified character limit, ensuring the component's content remains concise and visually consistent.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before setting up the project, ensure you have the following installed:
 
-### `npm test`
+- Node.js: LTS version recommended.
+- npm: Typically installed with Node.js.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Follow these steps to set up the project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  Clone the Repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    bashCopy code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    `git clone https://github.com/svb-jlang/web-component-in-react cd react-web-component-demo`
 
-### `npm run eject`
+2.  Install Dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    bashCopy code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    `npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.  Start the Development Server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    bashCopy code
 
-## Learn More
+    `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Access the React application at `http://localhost:3000/`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+### In React Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The `DialogBox` component can be integrated within any React component. Interaction with the component is facilitated through a React-controlled form, which includes:
 
-### Analyzing the Bundle Size
+- Text Input Field: Updates the component's text in real-time.
+- Style Variant Selector: Allows selection among different appearance styles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### As a Standalone Web Component
 
-### Making a Progressive Web App
+The `DialogBox` can be utilized in any HTML file or within other web frameworks:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+arduinoCopy code
 
-### Advanced Configuration
+`<dialog-box text="Hello World" variant="primary"></dialog-box>`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Attributes:
 
-### Deployment
+- text: Sets the text displayed within the component.
+- variant: Specifies the component's styling variant (`default`, `primary`, `secondary`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Customization and Styling
 
-### `npm run build` fails to minify
+Modify the component's internal styles by adjusting the CSS within the `DialogBox` JavaScript class definition. Styles are encapsulated using Shadow DOM, with specific variants handled within the `render` method.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Contributions are welcome! Here are some ways you can contribute:
+
+- Report Bugs: Use the issue tracker to report bugs.
+- Suggest Features: Propose new features or enhancements by opening an issue.
+- Submit Pull Requests: Contribute improvements or new features through pull requests.
+
+Please refer to the `CONTRIBUTING.md` for detailed submission guidelines.
+
+## License
+
+This project is available under the MIT License. Use and modify it for personal or commercial projects as needed.
