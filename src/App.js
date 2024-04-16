@@ -10,6 +10,11 @@ const AppContainer = styled.div`
   padding: 3em;
 `;
 
+/**
+ * React functional component for App.
+ * @returns {JSX.Element} The JSX element for the App component.
+ * @throws {Error} If there is an issue with setting attributes.
+ */
 const App = () => {
   const [title, setTitle] = useState("Title from React!");
   const [text, setText] = useState("Hello from React!");

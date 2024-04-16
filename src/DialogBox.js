@@ -10,12 +10,26 @@ class DialogBox extends HTMLElement {
     this.render();
   }
 
+  /**
+   * Method: attributeChangedCallback
+   * Description: This method is called when an attribute is changed.
+   * @param {string} name - The name of the attribute that was changed.
+   * @param {string} oldValue - The previous value of the attribute.
+   * @param {string} newValue - The new value of the attribute.
+   * @throws {Error} If oldValue is not equal to newValue.
+   */
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
       this.render();
     }
   }
 
+  /**
+   * Render the component with specified title, text, and variant.
+   * @throws {Error} If title is not a string.
+   * @throws {Error} If text is not a string.
+   * @throws {Error} If variant is not a string.
+   */
   render() {
     let title = this.getAttribute("title") || "Default Text";
     const text = this.getAttribute("text") || "Default Text";
